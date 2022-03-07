@@ -1,0 +1,19 @@
+version: '3'
+services:
+  docsify:
+    build: ./docker/docsify
+    container_name: m226b
+    ports:
+      - "7777:7777"
+      - "35728:35728"
+    volumes:
+        - ./docs:/site
+    working_dir: /site
+    command: docsify serve . -p 7777 --livereload-port 35728
+    
+  plantuml:
+    image: "plantuml/plantuml-server:jetty"
+    container_name: plantuml
+    ports:
+        - "7777:7777"
+

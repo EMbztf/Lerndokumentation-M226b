@@ -1,0 +1,43 @@
+@startuml
+
+class GeomObject {
+    # flaeche : double
+    # umfang : double
+    + getFleache() : double
+    + setFleache(double fleache)
+    + getUmfang() : double
+    + setUmfang(double umfang)
+    + vorstellen() : String
+}
+
+class Kreis {
+    - radius : double
+    + Kreis(double radius)
+    + berechneUmfang()
+    + berechneFleache()
+    + vorstellen() : String
+}
+
+class Viereck {
+    - seiteA : double
+    - seiteB : double
+    + Viereck(double seiteA, double seiteB) 
+    + berechneUmfang() 
+    + berechneFleache()
+    + vorstellen() : String
+}
+
+class RechtwinkligesDreieck {
+    - seiteA : double
+    - seiteB : double
+    + RechtwinkligesDreieck(double seiteA, double seiteB) 
+    + berechneUmfang() 
+    + berechneFleache()
+    + vorstellen() : String
+}
+
+GeomObject <|-- Kreis
+GeomObject <|-- Viereck
+GeomObject <|-- RechtwinkligesDreieck
+
+@enduml
